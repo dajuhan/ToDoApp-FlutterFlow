@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "175232945493",
+    "project_id": "to-do-slgybg",
+    "storage_bucket": "to-do-slgybg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175232945493:android:c91c57ea6bae78b8b6b3dc",
+        "android_client_info": {
+          "package_name": "com.mycompany.todo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYtamngOP5qZntfaZhd5BPBthTVbhZhOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
