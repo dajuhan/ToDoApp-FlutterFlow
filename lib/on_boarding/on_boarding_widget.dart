@@ -34,6 +34,9 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
     _model.favoriteColorTextController ??= TextEditingController();
     _model.favoriteColorFocusNode ??= FocusNode();
 
+    _model.phoneNumberTextController ??= TextEditingController();
+    _model.phoneNumberFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -368,6 +371,82 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                                 .asValidator(context),
                           ),
                         ),
+                        SizedBox(
+                          width: double.infinity,
+                          child: TextFormField(
+                            controller: _model.phoneNumberTextController,
+                            focusNode: _model.phoneNumberFocusNode,
+                            autofocus: false,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              isDense: true,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryText,
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintText: 'Phone Number...',
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    letterSpacing: 0.0,
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(24.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(24.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(24.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).error,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(24.0),
+                              ),
+                              filled: true,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  24.0, 26.0, 24.0, 26.0),
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
+                                ),
+                            cursorColor:
+                                FlutterFlowTheme.of(context).primaryText,
+                            validator: _model.phoneNumberTextControllerValidator
+                                .asValidator(context),
+                          ),
+                        ),
                         FFButtonWidget(
                           onPressed: () async {
                             final datePickedDate = await showDatePicker(
@@ -455,6 +534,7 @@ class _OnBoardingWidgetState extends State<OnBoardingWidget> {
                         displayName: _model.nameTextController.text,
                         birthday: _model.datePicked,
                         favoriteColor: _model.favoriteColorTextController.text,
+                        phoneNumber: _model.phoneNumberTextController.text,
                       ));
 
                       context.goNamed('tasks');
