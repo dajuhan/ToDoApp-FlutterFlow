@@ -18,6 +18,10 @@ class OnBoardingModel extends FlutterFlowModel<OnBoardingWidget> {
   FocusNode? favoriteColorFocusNode;
   TextEditingController? favoriteColorTextController;
   String? Function(BuildContext, String?)? favoriteColorTextControllerValidator;
+  // State field(s) for phone_number widget.
+  FocusNode? phoneNumberFocusNode;
+  TextEditingController? phoneNumberTextController;
+  String? Function(BuildContext, String?)? phoneNumberTextControllerValidator;
   DateTime? datePicked;
 
   @override
@@ -30,5 +34,8 @@ class OnBoardingModel extends FlutterFlowModel<OnBoardingWidget> {
 
     favoriteColorFocusNode?.dispose();
     favoriteColorTextController?.dispose();
+
+    phoneNumberFocusNode?.dispose();
+    phoneNumberTextController?.dispose();
   }
 }
